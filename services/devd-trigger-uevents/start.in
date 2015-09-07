@@ -1,0 +1,3 @@
+#!@BINDIR@/execlineb -P
+pipeline { find /sys -type f -name uevent -print0 }
+forstdin -0 -p f import -u f redirfd -w 1 $f echo add

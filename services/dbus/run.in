@@ -1,0 +1,4 @@
+#!@BINDIR@/execlineb -P
+fdmove -c 2 1
+if { mkdir /run/dbus }
+dbus-daemon --system --nofork

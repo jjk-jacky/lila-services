@@ -1,0 +1,6 @@
+*.swp
+config.mak
+files.mak
+services/*/start
+services/*/stop
+services/*/run

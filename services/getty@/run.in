@@ -1,0 +1,15 @@
+#!@BINDIR@/execlineb -P
+aa-service
+s6-envdir .
+unexport run
+import -D 38400 baud
+backtick -n options { ifte
+  { import options echo ${options} ${INSTANCE} }
+  { echo ${INSTANCE} }
+  aa-test -r options
+}
+import -s options
+emptyenv
+export TERM linux
+s6-envdir /etc/anopa/env
+agetty ${options} ${baud}

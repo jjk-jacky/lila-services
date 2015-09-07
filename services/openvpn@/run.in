@@ -1,0 +1,5 @@
+#!@BINDIR@/execlineb -P
+aa-service
+fdmove -c 2 1
+openvpn --cd /etc/openvpn --config /etc/openvpn/${INSTANCE}.conf
+ --errors-to-stderr --suppress-timestamps
