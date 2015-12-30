@@ -1,0 +1,8 @@
+#!@BINDIR@/execlineb -P
+foreground { if -n { aa-test -e /run/crontabs.slicd }
+    if { touch /run/crontabs.slicd }
+    if { chown cron:cron /run/crontabs.slicd }
+    chmod 600 /run/crontabs.slicd
+}
+setuid cron
+slicd-parser -s /etc/cron.d -o /run/crontabs.slicd

@@ -1,0 +1,6 @@
+#!@BINDIR@/execlineb -P
+fdmove -c 2 1
+s6-fdholder-retrieve /run/services/fdholdingd/socket pipe:cron-w
+fdmove 1 0
+s6-fdholder-retrieve /run/services/fdholdingd/socket pipe:slicd-r
+slicd-exec -R3 setuid %u miniexec

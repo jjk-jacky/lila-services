@@ -1,0 +1,8 @@
+#!@BINDIR@/execlineb -P
+fdmove -c 2 1
+s6-fdholder-retrieve /run/services/fdholdingd/socket pipe:slicd-w
+fdmove 1 0
+redirfd -w 0 /dev/null
+setuid cron
+exec -c
+slicd-sched -R3 /run/crontabs.slicd
