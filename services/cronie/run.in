@@ -1,3 +1,0 @@
-#!@BINDIR@/execlineb -P
-fdmove -c 2 1
-crond -n -m off -s
