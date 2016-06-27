@@ -1,0 +1,11 @@
+#!@BINDIR@/execlineb -P
+aa-service
+backtick -n device { ifte
+  { cat /etc/hdparm/${INSTANCE}/device }
+  { echo /dev/disk/by-id/${INSTANCE} }
+  aa-test -r /etc/hdparm/${INSTANCE}/device
+}
+import -u device
+backtick -ni options { cat /etc/hdparm/${INSTANCE}/options }
+import -us options
+hdparm ${options} ${device}
