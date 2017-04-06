@@ -2,13 +2,13 @@
 aa-service
 s6-envdir .
 unexport run
-import -D 38400 baud
+importas -D 38400 baud baud
 backtick -n options { ifte
-  { import options echo ${options} ${INSTANCE} }
+  { importas options options echo ${options} ${INSTANCE} }
   { echo ${INSTANCE} }
   aa-test -r options
 }
-import -s options
+importas -s options options
 emptyenv
 export TERM linux
 s6-envdir /etc/anopa/env

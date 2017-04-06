@@ -5,7 +5,7 @@ backtick -n device { ifte
   { echo /dev/disk/by-id/${INSTANCE} }
   aa-test -r /etc/hdparm/${INSTANCE}/device
 }
-import -u device
+importas -u device device
 backtick -ni options { cat /etc/hdparm/${INSTANCE}/options }
-import -us options
+importas -us options options
 hdparm ${options} ${device}
