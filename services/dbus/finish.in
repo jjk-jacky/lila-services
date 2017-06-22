@@ -1,2 +1,2 @@
-#!@BINDIR@/execlinep -P
+#!@BINDIR@/execlineb -P
 rm -rf /run/dbus
